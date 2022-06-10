@@ -3729,6 +3729,7 @@
 #include "code\modules\wiremod\marker.dm"
 #include "code\modules\wiremod\port.dm"
 #include "code\modules\wiremod\usb_cable.dm"
+#include "code\modules\wiremod\components\abstract\binary_decimal.dm"
 #include "code\modules\wiremod\components\abstract\compare.dm"
 #include "code\modules\wiremod\components\abstract\module.dm"
 #include "code\modules\wiremod\components\action\light.dm"
