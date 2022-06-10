@@ -46,7 +46,7 @@
 
 	/// Y position of the examined component
 	var/examined_rel_y = 0
-	
+
 	/// Just so we only print things that we have researched - is it bloat? not for me to decide
 	var/datum/techweb/techweb
 
@@ -500,6 +500,12 @@
 				var/obj/item/circuit_component/C = printed_design
 				C.added_internally = TRUE
 				add_component(C, null)
+		if("perform_action")
+			var/component_id = text2num(params["component_id"])
+			if(!WITHIN_RANGE(component_id, attached_components))
+				return
+			var/obj/item/circuit_component/component = attached_components[component_id]
+			component.ui_perform_action(ui.user, params["action_name"])
 
 /obj/item/integrated_circuit/proc/on_atom_usb_cable_try_attach(datum/source, obj/item/usb_cable/usb_cable, mob/user)
 	SIGNAL_HANDLER
