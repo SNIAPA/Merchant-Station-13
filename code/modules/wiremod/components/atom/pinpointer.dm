@@ -15,7 +15,7 @@
 
 	var/datum/port/output/on_error
 
-	var/max_range = 7
+	var/max_range = 20
 
 	circuit_flags = CIRCUIT_FLAG_INPUT_SIGNAL|CIRCUIT_FLAG_OUTPUT_SIGNAL
 
@@ -45,7 +45,7 @@
 
 	var/turf/location = get_turf(object)
 
-	if(object.z != location.z || get_dist(location, object) < max_range || !object)
+	if(object.z != location.z || get_dist(location, object) > max_range || !object)
 		x_pos.set_output(null)
 		y_pos.set_output(null)
 		z_pos.set_output(null)
