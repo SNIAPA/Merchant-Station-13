@@ -26,13 +26,6 @@
 		"minus" = "decrease"
 	)
 
-/obj/item/circuit_component/binary_decimal/save_data_to_list(list/component_data)
-	. = ..()
-	component_data["array_size"] = array_size
-
-/obj/item/circuit_component/binary_decimal/load_data_from_list(list/component_data)
-	set_array_size(component_data["array_size"])
-	return ..()
 
 /obj/item/circuit_component/binary_decimal/proc/set_array_size(new_size)
 	if(new_size <= 0)
@@ -60,11 +53,8 @@
 /obj/item/circuit_component/binary_decimal/proc/remove_bit_port(datum/port/to_remove)
 	return
 
-/obj/item/circuit_component/binary_decimal/populate_ports()
-	set_array_size(default_array_size)
-
 // Increase or decrease the array size
-/obj/item/circuit_component/binary_decimal/ui_perform_action(mob/user, action)
+/obj/item/circuit_component/binary_decimal/ui_perform_action(action)
 	switch(action)
 		if("increase")
 			set_array_size(min(array_size + 1, max_size))

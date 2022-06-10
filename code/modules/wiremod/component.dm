@@ -288,5 +288,5 @@
  * * user - Interacting mob
  * * action - A string for which action is being performed. No parameters passed because it's only a button press.
  */
-/obj/item/circuit_component/proc/ui_perform_action(mob/user, action)
+/obj/item/circuit_component/proc/ui_perform_action(action)
 	return

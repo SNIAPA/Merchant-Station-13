@@ -505,7 +505,7 @@
 			if(!WITHIN_RANGE(component_id, attached_components))
 				return
 			var/obj/item/circuit_component/component = attached_components[component_id]
-			component.ui_perform_action(ui.user, params["action_name"])
+			component.ui_perform_action(params["action_name"])
 
 /obj/item/integrated_circuit/proc/on_atom_usb_cable_try_attach(datum/source, obj/item/usb_cable/usb_cable, mob/user)
 	SIGNAL_HANDLER
